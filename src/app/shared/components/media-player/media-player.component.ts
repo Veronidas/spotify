@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { Subscription } from 'rxjs';
+import { Subscription, observable } from 'rxjs';
 import { TrackModel } from 'src/app/core/models/tracks.model';
 import { MultimediaService } from '../../services/multimedia.service';
 
@@ -22,13 +22,16 @@ export class MediaPlayerComponent implements OnInit, OnDestroy{
 
   constructor(private multimediaService: MultimediaService){}
   ngOnInit(): void {
-    const observer1$: Subscription = this.multimediaService.callback.subscribe (
-      (response: TrackModel) => {
-        console.log('Recibiendo cancion...', response);
+    const observable1$ = this.multimediaService.myObservable1$
+    .subscribe(
+      (responseOk) => {
+        console.log('Llego el aguaaa 🍉 ', responseOk);
+        
+      },
+      (responseFail) => {
+        console.log('Se tapo la tuberia 😿  ');
       }
     )
-
-    this.listObservers$ = [observer1$]
   }
 
   ngOnDestroy(): void {
