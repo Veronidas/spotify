@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 import { TrackModel } from 'src/app/core/models/tracks.model';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-history-page',
@@ -8,7 +9,7 @@ import { TrackModel } from 'src/app/core/models/tracks.model';
   styleUrls: ['./history-page.component.css']
 })
 export class HistoryPageComponent implements OnInit{
-  listResults: TrackModel[] = []
+  listResults: Observable<any> = of([])
   constructor(private searchService: SearchService){}
 
   ngOnInit(): void {
@@ -20,7 +21,7 @@ export class HistoryPageComponent implements OnInit{
     console.log('💛  Estoy en el padre!')
     this.searchService.searchTracks$(event)
     .subscribe(({ data }) => {
-      this.listResults = data;
+      this.listResults = this.searchService.searchTracks$(event);
       
     })
   }
