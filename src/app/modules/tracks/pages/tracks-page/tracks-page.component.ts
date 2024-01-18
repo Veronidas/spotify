@@ -14,7 +14,6 @@ export class TracksPageComponent implements OnInit, OnDestroy {
 
   tracksTrending: Array<TrackModel> = []
   tracksRandom: Array<TrackModel> = []
-
   listObservers$: Array<Subscription> = []
 
   constructor(private trackService: TrackService){}
@@ -26,7 +25,7 @@ export class TracksPageComponent implements OnInit, OnDestroy {
 
   async loadDataAll(): Promise<any>{
     this.tracksTrending = await this.trackService.getAllTracks$().toPromise()
-    this.tracksRandom = await this.trackService.getAllTracks$().toPromise()
+    // this.tracksRandom = await this.trackService.getAllTracks$().toPromise()
   }
 
   

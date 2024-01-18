@@ -20,8 +20,8 @@ export class AuthService {
       password  
     }
     return this.http.post(`${this.URL}/auth/login`, body).pipe(
-      tap((responseOk: any) => {
-        const { tokenSession, data } = responseOk;
+      tap((responseOK: any) => {
+        const { tokenSession, data } = responseOK;
         this.cookie.set('token', tokenSession, 4, '/');
       })
     )
