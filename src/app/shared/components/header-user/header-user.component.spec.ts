@@ -8,7 +8,7 @@ describe('HeaderUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeaderUserComponent]
+      declarations: [HeaderUserComponent]
     })
     .compileComponents();
     

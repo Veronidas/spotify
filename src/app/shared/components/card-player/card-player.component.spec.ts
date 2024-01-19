@@ -8,7 +8,7 @@ describe('CardPlayerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CardPlayerComponent]
+      declarations: [CardPlayerComponent]
     })
     .compileComponents();
     

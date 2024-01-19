@@ -8,7 +8,7 @@ describe('FavoritesPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FavoritesPageComponent]
+      declarations: [FavoritesPageComponent]
     })
     .compileComponents();
     

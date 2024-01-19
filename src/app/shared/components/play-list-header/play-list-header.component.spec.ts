@@ -8,7 +8,7 @@ describe('PlayListHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PlayListHeaderComponent]
+      declarations: [PlayListHeaderComponent]
     })
     .compileComponents();
     
