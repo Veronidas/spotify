@@ -1,6 +1,6 @@
 <!-- Diseño del mode (small)-->
 <div *ngIf="mode==='small'" class="card-player player-small">
-    <img appImgBroken [customImg]="'../../../assets/images/404.avif'" [src]="track.cover" [alt]="track?.name" class="cover">
+    <img appImgBroken [src]="null" [alt]="track?.name" class="cover">
     <div class="content-player">
         {{track.name}}
     </div>
@@ -17,7 +17,7 @@
 <!-- Diseño del mode (big)-->
 <div *ngIf="mode==='big'" class="card-player player-big">
 
-    <img appImgBroken [customImg]="'../../../assets/images/404.avif'" [src]="track.cover" alt="" class="cover">
+    <img appImgBroken [customImg]="'https://media.licdn.com/dms/image/C5112AQEw1fXuabCTyQ/article-inline_image-shrink_1500_2232/0/1581099611064?e=1710979200&v=beta&t=Wn67ujZ-xs5iocToV1ylU9xonL3Kb-Q_jMi_b9BDr6Q'" [src]="track.cover" alt="" class="cover">
 
     <div class="content-player">
         <div class="title-track">{{track.name}}</div>
