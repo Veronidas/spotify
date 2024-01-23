@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    api: 'http://localhost:3001/api/1.0'
+    api: 'https://node-api-tracks-master.onrender.com/api/1.0'
   };
